@@ -65,7 +65,7 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 const timer = document.getElementById('timer')
 
 //variabile da cui inserirò in html il numero del conto alla rovescia
-let counter = 1
+let counter = 30
 
 //decremento di interval per fare un countdown
 timer.innerText = counter--;
@@ -85,7 +85,7 @@ const clock = setInterval(() => {
     if (counter == 0) {
 
         //blocco la funzione
-        clearInterval(clock);
+        clearInterval((clock));
 
         //scompare il couter
         timer.innerText = ''
@@ -99,12 +99,12 @@ const clock = setInterval(() => {
         // divInputs.classList.toggle('d-none')
         document.getElementById('user-numbers').classList.toggle('d-none')
     } else {
-        timer.innerText = counter
+        timer.innerText = counter;
     }
 
     counter--
 
-}, 3000)
+}, 1000)
 
 
 
