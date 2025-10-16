@@ -43,6 +43,7 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
     - creo un form
     - creo 5 input in html di tipo number
     - creo un bottone in html per fare un submit dei valori inseriti
+    - add event per resettare comportamento standard del bottone
 
 
 - il software dice quanti e quali dei numeri da indovinare sono stati individuati
@@ -91,3 +92,14 @@ for (let i = 0; i < rngNumbers.length; i++) {
 //     // - creo 5 input in html di tipo number   ->   FATTO
 //     document.getElementById('user-numbers').style.display = 'block'
 // }, 3000)
+
+
+
+
+// - creo un bottone in html per fare un submit dei valori inseriti   ->   FATTO
+// - add event per resettare comportamento standard del bottone
+const form = document.getElementById('user-numbers')
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+})
