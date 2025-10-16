@@ -65,10 +65,18 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 const timer = document.getElementById('timer')
 
 //variabile da cui inserirò in html il numero del conto alla rovescia
-let counter = 5
+let counter = 1
 
 //decremento di interval per fare un countdown
 timer.innerText = counter--;
+
+
+
+
+
+
+
+
 
 //funzione per eseguire e bloccare il countdown
 const clock = setInterval(() => {
@@ -83,18 +91,20 @@ const clock = setInterval(() => {
         timer.innerText = ''
 
         //scompare il messaggio di memorizzazione dei numeri
-        document.querySelector('div').style.display = 'none'
+        document.getElementById('message').classList.toggle('d-none')
 
         //scompaioni i numeri e compaiono gli input
-        document.getElementById('random-numbers').style.display = 'none'
-        document.getElementById('user-numbers').style.display = 'block'
+        document.getElementById('random-numbers').classList.toggle('d-none')
+
+        // divInputs.classList.toggle('d-none')
+        document.getElementById('user-numbers').classList.toggle('d-none')
     } else {
         timer.innerText = counter
     }
 
     counter--
 
-}, 1000)
+}, 3000)
 
 
 
@@ -178,7 +188,8 @@ form.addEventListener('submit', (event) => {
     console.log(arrayResult);
 
     //faccio ricomparire i numeri generati randomicamente
-    document.getElementById('random-numbers').style.display = 'block'
+    document.getElementById('random-numbers').classList.toggle('d-none')
+
 
     //il software dice quanti e quali dei numeri da indovinare sono stati individuati
     result.innerText = `Hai indovinato ${arrayResult.length} numeri: ${arrayResult}`
