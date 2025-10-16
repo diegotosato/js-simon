@@ -99,6 +99,11 @@ const userNumbers = document.getElementsByTagName('input')
 const arrayUserNumbers = []
 
 
+// - pusho in un array per i numeri indovinati
+const result = document.getElementById('result')
+const arrayResult = []
+
+
 
 // - Da lì parte un timer di 30 secondi
 //     - funzione di setTimeout(() => {}, 30000)
@@ -128,20 +133,33 @@ form.addEventListener('submit', (event) => {
     console.log(arrayUserNumbers);
 
     //  - ciclo for per confrontare i numeri degli array
-    //     - condizioni if/else
-    //         - IF random include input[i]
-    //             - stampo numero
-    //             - pusho in un array per i numeri indovinati
-
+    
     for (let i = 0; i < arrayUserNumbers.length; i++) {
-
+        
+        //- condizioni if/else
+            //- IF random include input[i]
         if (arrayRngNumbers.includes(arrayUserNumbers[i])) {
+            //- stampo numero
+            //- pusho in un array per i numeri indovinati
             console.log('si');
-
+            arrayResult.push(arrayUserNumbers[i])
         }
 
     }
 
+    console.log(arrayResult);
+
+
+
+
+
+
+
+
+
+
+
+        
 })
 
 
