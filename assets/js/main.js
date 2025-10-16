@@ -81,13 +81,13 @@ for (let i = 0; i < rngNumbers.length; i++) {
 
 // - Da lì parte un timer di 30 secondi
 //     - funzione di setTimeout(() => {}, 30000)
-setTimeout(() => {
-    // - I numeri scompaiono
-    // - numeri display none
-    document.getElementById('random-numbers').style.display = 'none'
+// setTimeout(() => {
+//     // - I numeri scompaiono
+//     // - numeri display none
+//     document.getElementById('random-numbers').style.display = 'none'
 
-    // - appaiono invece 5 input
-    // - creo un form   ->   FATTO
-    // - creo 5 input in html di tipo number   ->   FATTO
-    document.getElementById('user-numbers').style.display = 'block'
-}, 3000)
+//     // - appaiono invece 5 input
+//     // - creo un form   ->   FATTO
+//     // - creo 5 input in html di tipo number   ->   FATTO
+//     document.getElementById('user-numbers').style.display = 'block'
+// }, 3000)
