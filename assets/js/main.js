@@ -85,5 +85,9 @@ setTimeout(() => {
     // - I numeri scompaiono
     // - numeri display none
     document.getElementById('random-numbers').style.display = 'none'
+
+    // - appaiono invece 5 input
+    // - creo un form   ->   FATTO
+    // - creo 5 input in html di tipo number   ->   FATTO
     document.getElementById('user-numbers').style.display = 'block'
 }, 3000)
