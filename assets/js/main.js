@@ -54,3 +54,38 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
             - stampo numero
             - pusho in un array per i numeri indovinati
 */
+
+
+//--------------------------------------------------------SVOLGIMENTO-----------------------------------------------------
+
+
+
+// - Visualizzare in pagina 5 numeri casuali
+
+//     - creo 5 "p" in html    ->    FATTO
+
+//     - assegno a tutti un id    ->   FATTO
+
+//     - isolo gli elementi in una costante
+
+const firstRngNumber = document.getElementById('first-rng-number')
+const secondRngNumber = document.getElementById('second-rng-number')
+const thirdRngNumber = document.getElementById('third-rng-number')
+const fourthRngNumber = document.getElementById('fourth-rng-number')
+const fifthRngNumber = document.getElementById('fifth-rng-number')
+
+// con funzione di generare un numero casuale
+//     - stampo il numero generato dentro al tag html
+
+firstRngNumber.innerText = Math.floor(Math.random() * 20);
+secondRngNumber.innerText = Math.floor(Math.random() * 20);
+thirdRngNumber.innerText = Math.floor(Math.random() * 20);
+fourthRngNumber.innerText = Math.floor(Math.random() * 20);
+fifthRngNumber.innerText = Math.floor(Math.random() * 20);
+
+
+
+
+
+
+// console.log(firstRngNumber, secondRngNumber, thirdRngNumber, fourthRngNumber, fifthRngNumber);
