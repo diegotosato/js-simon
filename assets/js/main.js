@@ -64,28 +64,23 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 
 //     - creo 5 "p" in html    ->    FATTO
 
-//     - assegno a tutti un id    ->   FATTO
+//     - assegno a tutti la stessa classe    ->   FATTO
 
 //     - isolo gli elementi in una costante
+const rngNumbers = document.getElementsByClassName('rng')
 
-const firstRngNumber = document.getElementById('first-rng-number')
-const secondRngNumber = document.getElementById('second-rng-number')
-const thirdRngNumber = document.getElementById('third-rng-number')
-const fourthRngNumber = document.getElementById('fourth-rng-number')
-const fifthRngNumber = document.getElementById('fifth-rng-number')
 
 // con funzione di generare un numero casuale
 //     - stampo il numero generato dentro al tag html
-
-firstRngNumber.innerText = Math.floor(Math.random() * 20);
-secondRngNumber.innerText = Math.floor(Math.random() * 20);
-thirdRngNumber.innerText = Math.floor(Math.random() * 20);
-fourthRngNumber.innerText = Math.floor(Math.random() * 20);
-fifthRngNumber.innerText = Math.floor(Math.random() * 20);
+for (let i = 0; i < rngNumbers.length; i++) {
+    rngNumbers[i].innerHTML = Math.floor(Math.random() * 20);
+}
 
 
+// - Da lì parte un timer di 30 secondi
+//     - funzione di setTimeout(() => {}, 30000)
+setTimeout(() => {
+    // - I numeri scompaiono
+    // - numeri display none
 
-
-
-
-// console.log(firstRngNumber, secondRngNumber, thirdRngNumber, fourthRngNumber, fifthRngNumber);
+}, 30000)
