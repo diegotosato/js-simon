@@ -107,16 +107,16 @@ const arrayResult = []
 
 // - Da lì parte un timer di 30 secondi
 //     - funzione di setTimeout(() => {}, 30000)
-// setTimeout(() => {
-//     // - I numeri scompaiono
-//     // - numeri display none
-//     document.getElementById('random-numbers').style.display = 'none'
+setTimeout(() => {
+    // - I numeri scompaiono
+    // - numeri display none
+    document.getElementById('random-numbers').style.display = 'none'
 
-//     // - appaiono invece 5 input
-//     // - creo un form   ->   FATTO
-//     // - creo 5 input in html di tipo number   ->   FATTO
-//     document.getElementById('user-numbers').style.display = 'block'
-// }, 3000)
+    // - appaiono invece 5 input
+    // - creo un form   ->   FATTO
+    // - creo 5 input in html di tipo number   ->   FATTO
+    document.getElementById('user-numbers').style.display = 'block'
+}, 3000)
 
 
 
@@ -149,18 +149,11 @@ form.addEventListener('submit', (event) => {
 
     console.log(arrayResult);
 
-
+    //faccio ricomparire i numeri generati
+    document.getElementById('random-numbers').style.display = 'block'
 
     // - il software dice quanti e quali dei numeri da indovinare sono stati individuati
     result.innerText = `Hai indovinato ${arrayResult.length} numeri: ${arrayResult}`
-
-
-
-
-
-
-
-
 
 
 })
