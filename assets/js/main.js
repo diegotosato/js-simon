@@ -65,21 +65,42 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 const timer = document.getElementById('timer')
 
 //variabile da cui inserirò in html il numero del conto alla rovescia
-const counter = 5
-timer.innerHTML = counter;
+let counter = 5
+
+//decremento di interval per fare un countdown
+timer.innerText = counter--;
+
+//funzione per eseguire e bloccare il countdown
+const clock = setInterval(() => {
+
+    //quando il countdown arriva a 0
+    if (counter == 0) {
+
+        //blocco la funzione
+        clearInterval(clock);
+
+        //scompare il couter
+        timer.innerText = ''
+
+        //scompare il messaggio di memorizzazione dei numeri
+        document.querySelector('div').style.display = 'none'
+
+        //scompaioni i numeri e compaiono gli input
+        document.getElementById('random-numbers').style.display = 'none'
+        document.getElementById('user-numbers').style.display = 'block'
+    } else {
+        timer.innerText = counter
+    }
+
+    counter--
+
+}, 1000)
 
 
-//     - funzione di setTimeout(() => {}, 30000)
-setTimeout(() => {
-    // - I numeri scompaiono
-    // - numeri display none
-    document.getElementById('random-numbers').style.display = 'none'
 
-    // - appaiono invece 5 input
-    // - creo un form   ->   FATTO
-    // - creo 5 input in html di tipo number   ->   FATTO
-    document.getElementById('user-numbers').style.display = 'block'
-}, 5000)
+
+
+
 
 
 
