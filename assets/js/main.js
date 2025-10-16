@@ -59,52 +59,6 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 
 //--------------------------------------------------------SVOLGIMENTO-----------------------------------------------------
 
-
-
-
-// - Visualizzare in pagina 5 numeri casuali
-
-
-//     - creo 5 "p" in html    ->    FATTO
-
-
-//     - assegno a tutti la stessa classe    ->   FATTO
-
-
-
-
-//     - creo un array per i numeri random che andrò a pushare una volta generati
-const arrayRngNumbers = []
-
-
-
-
-//     - isolo gli elementi in una costante
-const rngNumbers = document.getElementsByClassName('rng')
-// con funzione di generare un numero casuale
-//     - stampo il numero generato dentro al tag html
-for (let i = 0; i < rngNumbers.length; i++) {
-    rngNumbers[i].innerHTML = Math.floor(Math.random() * 20);
-    arrayRngNumbers.push(rngNumbers[i].innerHTML)
-
-}
-
-console.log(arrayRngNumbers);
-
-
-
-// - creo un array per i numeri inseriti dall'utente che pusherò al momento del click del bottone
-const userNumbers = document.getElementsByTagName('input')
-
-const arrayUserNumbers = []
-
-
-// - pusho in un array per i numeri indovinati
-const result = document.getElementById('result')
-const arrayResult = []
-
-
-
 // - Da lì parte un timer di 30 secondi
 //     - funzione di setTimeout(() => {}, 30000)
 setTimeout(() => {
@@ -121,26 +75,70 @@ setTimeout(() => {
 
 
 
+//creo un array per i numeri random che andrò a pushare una volta generati
+const arrayRngNumbers = []
+
+//Visualizzare in pagina 5 numeri casuali
+//- creo 5 "p" in html   ->   FATTO
+//- assegno a tutti la stessa classe   ->   FATTO
+//- isolo gli elementi in una variabile
+//- assegno ad ognuno un numero casuale con un ciclo for
+//- stampo il numero generato dentro al tag html
+
+const rngNumbers = document.getElementsByClassName('rng')
+
+for (let i = 0; i < rngNumbers.length; i++) {
+    rngNumbers[i].innerHTML = Math.floor(Math.random() * 20);
+    arrayRngNumbers.push(rngNumbers[i].innerHTML)
+
+}
+
+console.log(arrayRngNumbers);
+
+
+
+
+//- creo un array per i numeri inseriti dall'utente che pusherò al momento del click del bottone
+const arrayUserNumbers = []
+
+// isolo tutti gli input selezionando per tag in una variabile
+const userNumbers = document.getElementsByTagName('input')
+
+
+
+
+
+
 // - creo un bottone in html per fare un submit dei valori inseriti   ->   FATTO
-// - add event per resettare comportamento standard del bottone
+
+
+
+//isolo il form selezionandolo tramite ID per andare ad aggiungere poi gli eventi al submit
 const form = document.getElementById('user-numbers')
 
+
+
+// FORM - eventi al click del bottone -> "submit"
 form.addEventListener('submit', (event) => {
+
+    //reset comportamento di button
     event.preventDefault();
+
+    //ciclo per pushare nel corrispettivo array dei numeri inseriti dall'utente
     for (let i = 0; i < userNumbers.length; i++) {
         arrayUserNumbers.push(userNumbers[i].value)
     }
     console.log(arrayUserNumbers);
 
-    //  - ciclo for per confrontare i numeri degli array
 
+
+    //  - ciclo per vedere se l'array dei numeri casuali include i numeri inseriti dall'utente
     for (let i = 0; i < arrayUserNumbers.length; i++) {
 
-        //- condizioni if/else
-        //- IF random include input[i]
+        //se array num. casuali include...
         if (arrayRngNumbers.includes(arrayUserNumbers[i])) {
-            //- stampo numero
-            //- pusho in un array per i numeri indovinati
+            //allora loggo in console un mex di conferma
+            //allora pusho il numero nell'array risultato
             console.log('si');
             arrayResult.push(arrayUserNumbers[i])
         }
@@ -149,10 +147,10 @@ form.addEventListener('submit', (event) => {
 
     console.log(arrayResult);
 
-    //faccio ricomparire i numeri generati
+    //faccio ricomparire i numeri generati randomicamente
     document.getElementById('random-numbers').style.display = 'block'
 
-    // - il software dice quanti e quali dei numeri da indovinare sono stati individuati
+    //il software dice quanti e quali dei numeri da indovinare sono stati individuati
     result.innerText = `Hai indovinato ${arrayResult.length} numeri: ${arrayResult}`
 
 
@@ -160,12 +158,10 @@ form.addEventListener('submit', (event) => {
 
 
 
+// isolo div con id result in una variabile
+const result = document.getElementById('result')
 
-
-
-
-
-
-
+// array vuoto dove verranno pushati SOLO i numeri in comune tra i random e gli inseriti
+const arrayResult = []
 
 
