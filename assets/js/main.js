@@ -60,6 +60,15 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 //--------------------------------------------------------SVOLGIMENTO-----------------------------------------------------
 
 // - Da lì parte un timer di 30 secondi
+
+//isolo div con id timer
+const timer = document.getElementById('timer')
+
+//variabile da cui inserirò in html il numero del conto alla rovescia
+const counter = 5
+timer.innerHTML = counter;
+
+
 //     - funzione di setTimeout(() => {}, 30000)
 setTimeout(() => {
     // - I numeri scompaiono
@@ -70,7 +79,7 @@ setTimeout(() => {
     // - creo un form   ->   FATTO
     // - creo 5 input in html di tipo number   ->   FATTO
     document.getElementById('user-numbers').style.display = 'block'
-}, 3000)
+}, 5000)
 
 
 
