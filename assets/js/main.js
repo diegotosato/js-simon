@@ -62,14 +62,15 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 
 // - Visualizzare in pagina 5 numeri casuali
 
+
 //     - creo 5 "p" in html    ->    FATTO
+
 
 //     - assegno a tutti la stessa classe    ->   FATTO
 
+
 //     - isolo gli elementi in una costante
 const rngNumbers = document.getElementsByClassName('rng')
-
-
 // con funzione di generare un numero casuale
 //     - stampo il numero generato dentro al tag html
 for (let i = 0; i < rngNumbers.length; i++) {
@@ -77,10 +78,12 @@ for (let i = 0; i < rngNumbers.length; i++) {
 }
 
 
+
 // - Da lì parte un timer di 30 secondi
 //     - funzione di setTimeout(() => {}, 30000)
 setTimeout(() => {
     // - I numeri scompaiono
     // - numeri display none
-
-}, 30000)
+    document.getElementById('random-numbers').style.display = 'none'
+    document.getElementById('user-numbers').style.display = 'block'
+}, 3000)
