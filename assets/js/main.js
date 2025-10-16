@@ -61,6 +61,7 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 
 
 
+
 // - Visualizzare in pagina 5 numeri casuali
 
 
@@ -70,13 +71,32 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 //     - assegno a tutti la stessa classe    ->   FATTO
 
 
+
+// - il software dice quanti e quali dei numeri da indovinare sono stati individuati
+//     - creo un array per i numeri random che andrò a pushare una volta generati
+const arrayRngNumbers = []
+
+
+
+
 //     - isolo gli elementi in una costante
 const rngNumbers = document.getElementsByClassName('rng')
 // con funzione di generare un numero casuale
 //     - stampo il numero generato dentro al tag html
 for (let i = 0; i < rngNumbers.length; i++) {
     rngNumbers[i].innerHTML = Math.floor(Math.random() * 20);
+    arrayRngNumbers.push(rngNumbers[i].innerHTML)
+
 }
+
+console.log(arrayRngNumbers);
+
+
+
+// - creo un array per i numeri inseriti dall'utente che pusherò al momento del click del bottone
+const userNumbers = document.getElementsByTagName('input')
+
+const arrayUserNumbers = []
 
 
 
@@ -102,4 +122,36 @@ const form = document.getElementById('user-numbers')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    for (let i = 0; i < userNumbers.length; i++) {
+        arrayUserNumbers.push(userNumbers[i].value)
+    }
+    console.log(arrayUserNumbers);
+
+    //  - ciclo for per confrontare i numeri degli array
+    //     - condizioni if/else
+    //         - IF random include input[i]
+    //             - stampo numero
+    //             - pusho in un array per i numeri indovinati
+
+    for (let i = 0; i < arrayUserNumbers.length; i++) {
+
+        if (arrayRngNumbers.includes(arrayUserNumbers[i])) {
+            console.log('si');
+
+        }
+
+    }
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
