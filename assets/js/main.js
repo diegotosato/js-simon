@@ -72,7 +72,7 @@ Immaginate la logica come fosse uno snack: "Dati 2 array di numeri, indica quali
 
 
 
-// - il software dice quanti e quali dei numeri da indovinare sono stati individuati
+
 //     - creo un array per i numeri random che andrò a pushare una volta generati
 const arrayRngNumbers = []
 
@@ -133,11 +133,11 @@ form.addEventListener('submit', (event) => {
     console.log(arrayUserNumbers);
 
     //  - ciclo for per confrontare i numeri degli array
-    
+
     for (let i = 0; i < arrayUserNumbers.length; i++) {
-        
+
         //- condizioni if/else
-            //- IF random include input[i]
+        //- IF random include input[i]
         if (arrayRngNumbers.includes(arrayUserNumbers[i])) {
             //- stampo numero
             //- pusho in un array per i numeri indovinati
@@ -151,6 +151,8 @@ form.addEventListener('submit', (event) => {
 
 
 
+    // - il software dice quanti e quali dei numeri da indovinare sono stati individuati
+    result.innerText = `Hai indovinato ${arrayResult.length} numeri: ${arrayResult}`
 
 
 
@@ -159,7 +161,8 @@ form.addEventListener('submit', (event) => {
 
 
 
-        
+
+
 })
 
 
